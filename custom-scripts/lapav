@@ -3,7 +3,7 @@
 hidden() {
     bspc query -N -n .local.window.hidden \
         | xargs -r -I{} sh -c 'printf "%s:%s\n" {} "$(xprop -id {} WM_NAME | cut -d\= -f2)"' \
-        | dmenu -l 5 -i -p "Show:" \
+        | rofi -dmenu -l 5 -i -p "Show:" \
         | cut -d':' -f1 \
         | xargs -r -I{} bspc node {} -g hidden="${1:-on}"
 }

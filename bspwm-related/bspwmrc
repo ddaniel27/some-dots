@@ -15,7 +15,7 @@ bspc config gapless_monocle      true
 
 xrandr --output HDMI-0 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output DP-1 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-3 --mode 1920x1080 --pos 3840x0 --rotate normal
 
-feh --bg-scale /home/ddaniel27/.local/wallpapers/cron.png
+feh --bg-scale "$(ls /home/ddaniel27/.local/wallpapers/* | shuf -n 1)"
 
 polybar &
 picom &

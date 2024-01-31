@@ -18,21 +18,23 @@ zle -N zle-keymap-select
 export EDITOR='vim'
 export VISUAL='vim'
 export GOPATH=/home/ddaniel27/go
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin:/home/ddaniel27/.local/bin/myscripts
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin:/home/ddaniel27/.local/bin/myscripts:/home/ddaniel27/.local/bin
 
 alias sudo='sudo '
 alias n='nvim'
 alias N='nvim -S'
 alias i='kitten icat'
+alias ssh='kitten ssh'
+alias dc='docker-compose'
 unalias ls
 unalias ll
 unalias la
 
 ll() {
-    ls -lh --color=always "$@" | awk 'BEGIN {OFS=" ";} {if (NF == 9 && $7 ~ /^[1-9]$/ ) $7 = "0"$7; print;}' | awk 'NF == 9{print $6" "$7" "$8" "$9}'
+    ls -lh --color=always "$@" | awk 'BEGIN {OFS=" ";} {if (NF >= 9 && $7 ~ /^[1-9]$/ ) $7 = "0"$7; print;}' | awk 'NF >= 9{ for (i=6; i<=NF; i++) printf $i" "; print ""; }'
 }
 la() {
-    ls -lha --color=always "$@" | awk 'BEGIN {OFS=" ";} {if (NF == 9 && $7 ~ /^[1-9]$/ ) $7 = "0"$7; print;}' | awk 'NF == 9{print $6" "$7" "$8" "$9}'
+    ls -lha --color=always "$@" | awk 'BEGIN {OFS=" ";} {if (NF >= 9 && $7 ~ /^[1-9]$/ ) $7 = "0"$7; print;}' | awk 'NF >= 9{ for (i=6; i<=NF; i++) printf $i" "; print ""; }'
 }
 
 set -o vi

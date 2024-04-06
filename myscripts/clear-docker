@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+docker image rm $(docker image ls | awk '{ if ($3 != "IMAGE") print $3 }')
+docker volume rm $(docker volume ls | awk 'NF == 2 {print $2}')

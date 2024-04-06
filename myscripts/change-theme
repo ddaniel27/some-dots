@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+THEME_ROUTE="$HOME/.local/custom-themes"
+
+$THEME_ROUTE/$(ls $THEME_ROUTE | shuf -n 1)/start

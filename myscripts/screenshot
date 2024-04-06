@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+output='/tmp/screenshots/%Y-%m-%d-%T-screenshot.png'
+directory='/tmp/screenshots'
+
+if [ ! -d "$directory" ]; then
+    mkdir -p "$directory"
+fi
+
+scrot "$output" --select --line mode=edge -e 'xclip -selection clipboard -t image/png -i $f'

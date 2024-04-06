@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+THEME_ROUTE="$HOME/.local/custom-themes"
+
+pkill -USR1 -x polybar
+
+feh --bg-scale $THEME_ROUTE/white-skeleton/wallpaper.png
+polybar -c=$THEME_ROUTE/white-skeleton/config.ini -q example &

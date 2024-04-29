@@ -7,6 +7,7 @@ ln -s $PWD/fontconfig $HOME/.config/fontconfig
 ln -s $PWD/kitty-related $HOME/.config/kitty
 ln -s $PWD/picom $HOME/.config/picom
 ln -s $PWD/rofi-related $HOME/.config/rofi 
+ln -s $PWD/packer.nvim $HOME/.cache/nvim/
 
 # Shell config
 ln -sf $PWD/zsh-related/.zshrc $HOME/.zshrc

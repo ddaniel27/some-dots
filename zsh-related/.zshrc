@@ -17,9 +17,8 @@ zle -N zle-keymap-select
 
 export EDITOR='vim'
 export VISUAL='vim'
-export GOPRIVATE=bitbucket.org/rappinc
-export GOPATH=/home/ddaniel27/go
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin:/home/ddaniel27/.local/bin/myscripts:/home/ddaniel27/.local/bin
+export GOPATH=$HOME/go
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin:$HOME/.local/bin/myscripts:$HOME/.local/bin
 
 alias sudo='sudo '
 alias n='nvim'

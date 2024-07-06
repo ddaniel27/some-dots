@@ -82,7 +82,6 @@ super + shift + x
 super + BackSpace
 	systemctl suspend
 
-
 # Volume manager
 super + p
 	kitty pulsemixer

@@ -17,6 +17,7 @@ zle -N zle-keymap-select
 
 export EDITOR='vim'
 export VISUAL='vim'
+export GOPRIVATE='github.mheducation.com'
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin:$HOME/.local/bin/myscripts:$HOME/.local/bin
 
@@ -35,6 +36,10 @@ ll() {
 }
 la() {
     ls -lha --color=always "$@" | awk 'BEGIN {OFS=" ";} {if (NF >= 9 && $7 ~ /^[1-9]$/ ) $7 = "0"$7; print;}' | awk 'NF >= 9{ for (i=6; i<=NF; i++) printf $i" "; print ""; }'
+}
+
+sshmac() {
+ ssh daniel.dorado@192.168.20.16
 }
 
 set -o vi

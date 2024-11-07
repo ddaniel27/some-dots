@@ -19,7 +19,7 @@ export EDITOR='vim'
 export VISUAL='vim'
 export GOPRIVATE='github.mheducation.com'
 export GOPATH=$HOME/go
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin:$HOME/.local/bin/myscripts:$HOME/.local/bin
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin:$HOME/.local/bin/myscripts:$HOME/.local/bin:$HOME/.cargo/bin
 
 alias sudo='sudo '
 alias n='nvim'
@@ -27,6 +27,7 @@ alias N='nvim -S'
 alias i='kitten icat'
 alias ssh='kitten ssh'
 alias dc='docker-compose'
+alias zt='zathura'
 unalias ls
 unalias ll
 unalias la
@@ -40,6 +41,15 @@ la() {
 
 sshmac() {
  ssh daniel.dorado@192.168.20.16
+}
+
+setssh() {
+  eval "$(ssh-agent -s)"
+  for key in $HOME/.ssh/id_*; do
+    if [[ -f "$key" && ! "key" =~ \.pub$ ]]; then
+      ssh-add "$key"
+    fi
+  done
 }
 
 set -o vi

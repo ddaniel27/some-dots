@@ -28,6 +28,7 @@ alias i='kitten icat'
 alias ssh='kitten ssh'
 alias dc='docker-compose'
 alias zt='zathura'
+alias tf='terraform'
 unalias ls
 unalias ll
 unalias la
@@ -40,7 +41,7 @@ la() {
 }
 
 sshmac() {
- ssh daniel.dorado@192.168.20.16
+ ssh daniel.dorado@192.168.20.13
 }
 
 setssh() {

@@ -69,6 +69,10 @@ super + alt + shift + {h,j,k,l}
 super + r
 	brave
 
+# Open postman
+super + e
+	postman
+
 # Take a screenshot and save in clipboard
 super + shift + s
 	/home/ddaniel27/.local/bin/myscripts/screenshot

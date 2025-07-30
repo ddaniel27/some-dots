@@ -26,7 +26,7 @@ alias n='nvim'
 alias N='nvim -S'
 alias i='kitten icat'
 alias ssh='kitten ssh'
-alias dc='docker-compose'
+alias dc='docker compose'
 alias zt='zathura'
 alias tf='terraform'
 unalias ls
@@ -42,15 +42,6 @@ la() {
 
 sshmac() {
  ssh daniel.dorado@192.168.20.13
-}
-
-setssh() {
-  eval "$(ssh-agent -s)"
-  for key in $HOME/.ssh/id_*; do
-    if [[ -f "$key" && ! "key" =~ \.pub$ ]]; then
-      ssh-add "$key"
-    fi
-  done
 }
 
 set -o vi

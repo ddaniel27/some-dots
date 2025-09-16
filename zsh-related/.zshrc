@@ -24,6 +24,7 @@ export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin:$HOME/.local/bin/myscripts:$HOME
 alias sudo='sudo '
 alias n='nvim'
 alias N='nvim -S'
+alias nob='nvim +Obsidian'
 alias i='kitten icat'
 alias ssh='kitten ssh'
 alias dc='docker compose'
@@ -41,7 +42,7 @@ la() {
 }
 
 sshmac() {
- ssh daniel.dorado@192.168.20.13
+ kitten ssh daniel.dorado@192.168.20.88
 }
 
 set -o vi

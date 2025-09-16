@@ -1,8 +1,0 @@
-#!/usr/bin/env sh
-
-THEME_ROUTE="$HOME/.local/custom-themes"
-
-pkill -USR1 -x polybar
-
-feh --bg-scale $THEME_ROUTE/tree-house-evening/wallpaper.png
-polybar -c=$THEME_ROUTE/tree-house-evening/config.ini -q example &

@@ -77,15 +77,6 @@ super + e
 super + shift + s
 	/home/ddaniel27/.local/bin/myscripts/screenshot
 
-# Change theme
-super + shift + x
-	/home/ddaniel27/.local/bin/myscripts/change-theme
-
-
-# suspend
-super + BackSpace
-	systemctl suspend
-
 # Volume manager
 super + p
 	kitty pulsemixer

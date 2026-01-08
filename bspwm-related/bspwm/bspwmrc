@@ -15,7 +15,7 @@ bspc config gapless_monocle      true
 bspc config pointer_modifier mod1
 bspc config pointer_action1 move
 
-xrandr --output DP-5 --mode 1920x1080 --pos 0x375 --rotate normal --output DP-1 --primary --mode 1920x1080 --pos 1920x375 --rotate normal --output DP-3 --mode 1920x1080 --pos 3840x0 --rotate right
+xrandr --output DP-5 --mode 1920x1080 --pos 0x0 --rotate inverted --output DP-1 --primary --mode 1920x1080 --pos 0x1080 --rotate normal --output DP-3 --mode 1920x1080 --pos 1920x275 --rotate right
 
 polybar &
 picom &

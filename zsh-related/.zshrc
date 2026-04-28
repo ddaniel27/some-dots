@@ -6,10 +6,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-if [ -d "/usr/local/go/bin" ] ; then
-    PATH=$PATH:/usr/local/go/bin
-fi
-
 function zle-keymap-select {
   zle reset-prompt
 }
@@ -22,11 +18,13 @@ export MACHINE_ENV='personal'
 export REMOTE_WORK_MACHINE_ADDRESS='192.168.20.88'
 
 # Go settings
-export GOPRIVATE='github.mheducation.com'
 export GOPATH=$HOME/go
 
 # Path settings
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin:$HOME/.local/bin/myscripts:$HOME/.local/bin:$HOME/.cargo/bin
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:$HOME/.cargo/bin
 
 # Aliases settings
 alias sudo='sudo '
@@ -53,6 +51,7 @@ la() {
     ls -lha --color=always "$@" | awk 'BEGIN {OFS=" ";} {if (NF >= 9 && $7 ~ /^[1-9]$/ ) $7 = "0"$7; print;}' | awk 'NF >= 9{ for (i=6; i<=NF; i++) printf $i" "; print ""; }'
 }
 
+# Direct ssh
 sshmac() {
  kitten ssh daniel.dorado@$REMOTE_WORK_MACHINE_ADDRESS
 }

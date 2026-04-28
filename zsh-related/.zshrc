@@ -15,12 +15,20 @@ function zle-keymap-select {
 }
 zle -N zle-keymap-select
 
+# Env Vars settings
 export EDITOR='vim'
 export VISUAL='vim'
+export MACHINE_ENV='personal'
+export REMOTE_WORK_MACHINE_ADDRESS='192.168.20.88'
+
+# Go settings
 export GOPRIVATE='github.mheducation.com'
 export GOPATH=$HOME/go
+
+# Path settings
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin:$HOME/.local/bin/myscripts:$HOME/.local/bin:$HOME/.cargo/bin
 
+# Aliases settings
 alias sudo='sudo '
 alias n='nvim'
 alias N='nvim -S'
@@ -32,19 +40,23 @@ alias dc='docker compose'
 alias zt='zathura'
 alias tf='terraform'
 unalias ls
-unalias ll
-unalias la
 
+# Custom list files
+unalias ll
 ll() {
     ls -lh --color=always "$@" | awk 'BEGIN {OFS=" ";} {if (NF >= 9 && $7 ~ /^[1-9]$/ ) $7 = "0"$7; print;}' | awk 'NF >= 9{ for (i=6; i<=NF; i++) printf $i" "; print ""; }'
 }
+
+# Custom list all files
+unalias la
 la() {
     ls -lha --color=always "$@" | awk 'BEGIN {OFS=" ";} {if (NF >= 9 && $7 ~ /^[1-9]$/ ) $7 = "0"$7; print;}' | awk 'NF >= 9{ for (i=6; i<=NF; i++) printf $i" "; print ""; }'
 }
 
 sshmac() {
- kitten ssh daniel.dorado@192.168.20.88
+ kitten ssh daniel.dorado@$REMOTE_WORK_MACHINE_ADDRESS
 }
 
+# Set vi mode in console
 set -o vi
 bindkey '^R' history-incremental-search-backward
